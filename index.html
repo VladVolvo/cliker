@@ -14,6 +14,13 @@
     <div id="text">Score: 0</div> 
     <script src="https://vk.com/js/api/xd_connection.js?2"  type="text/javascript"></script>
     <script>
+        
+       VK.init(function() { 
+            alert("Good");
+        }, function() { 
+            alert("Bad");
+        }, '5.60');*/
+        
         var t = 30;
         var i = 0;
         var time = t;
@@ -32,6 +39,9 @@
                      {
                          clearInterval(id_interval);
                          alert("You score: " + i);
+                         VK.api("wall.post", {"message": "Hello!"}, function (data) {
+                             alert("Post ID:" + data.response.post_id);
+                         });
                          document.getElementById("btnStart").style.display = "";
                          i = 0;
                          document.getElementById('text').innerHTML = "Score: " + i;
