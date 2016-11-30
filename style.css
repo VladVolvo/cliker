@@ -1,0 +1,44 @@
+* {
+    font: 14pt georgia;
+}
+#cloud {
+    background: #ccc;
+    width: 350px;
+    height: 300px;
+    margin: auto;
+}
+
+#text, h1 {
+    text-align: center;
+}
+
+#start {
+    margin: auto;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#reset {
+    margin-top: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#btnStart {
+    background: #a4f442;
+    padding: 5px;
+    border: 1px solid #000;
+}
+
+#btnStartFalse{
+    background: #c1ff75;
+    padding: 5px;
+    border: 1px solid #000;
+    cursor: default;
+}
+
+#btnStart:hover {
+    background: #c1ff75;
+    cursor: default;
+}
+

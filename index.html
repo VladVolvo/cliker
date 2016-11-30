@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <h1>Clicker - кто самый быстрый кликер?</h1>
+    <div id="start">
+        <span onclick="btnNewGame()" id="btnStart">НАЧАТЬ ИГРУ</span> <span id="timer">30</span>
+    </div>
+    <div id="cloud"></div>
+    <div id="text">Score: 0</div> 
+    <script>
+        var t = 30;
+        var i = 0;
+        var time = t;
+        var cloud = document.getElementById("cloud");
+        function btnNewGame(){
+            document.getElementById("btnStart").style.display = "none";
+            time = t;
+            LoopGame();
+            var id_interval = setInterval(function(){
+                 if(time>0)
+                 {
+                     time--;
+                     console.log("секунд осталось:" + time);  
+                     document.getElementById('timer').innerHTML = time;
+                     if(time == 0)
+                     {
+                         clearInterval(id_interval);
+                         alert("You score: " + i);
+                         document.getElementById("btnStart").style.display = "";
+                         i = 0;
+                         document.getElementById('text').innerHTML = "Score: " + i;
+                         document.getElementById('timer').innerHTML = t;
+                     }
+                 }
+                console.log("Функция еще идет.")
+                return;
+            },1000);
+        }      
+
+        var shelchok = function(){
+            cloud.onmousedown = function(){
+                cloud.style.cssText = "background: #eee;";
+            };
+            cloud.onmouseup = function() {
+                cloud.style.cssText = "background: #ccc;";
+            };
+        }
+        shelchok();
+        function LoopGame(){
+            cloud.onclick = function() {
+                if(time>0){
+                    i++;
+                    console.log("Колличество нажатий:" + i);  
+                    document.getElementById('text').innerHTML = "Score: " + i;
+                }
+            };
+        }
+        
+    </script>
+    
+</body>
+</html>
