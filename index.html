@@ -21,7 +21,7 @@
             alert("Bad");
         }, '5.60');
         
-        var t = 30;
+        var t = 5;
         var i = 0;
         var time = t;
         var cloud = document.getElementById("cloud");
@@ -40,7 +40,7 @@
                          clearInterval(id_interval);
                          alert("You score: " + i);
                          VK.api("wall.post", {"message": "Hello!"}, function (data) {
-                             
+                             console.log("Запись отправлена")
                          });
                          document.getElementById("btnStart").style.display = "";
                          i = 0;
